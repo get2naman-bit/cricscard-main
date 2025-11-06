@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+/* Light mode colors */
+:root {
+  --bg-primary: #f8fafb;
+  --bg-secondary: #ffffff;
+  --text-primary: #1a1d21;
+  --text-secondary: #5f6c7b;
+  --border-color: #e2e8f0;
+  --cricket-accent: #10b981;
+  --cricket-accent-light: #d1fae5;
+  --football-accent: #3b82f6;
+  --football-accent-light: #dbeafe;
+  --live-indicator: #ef4444;
+  --card-shadow: rgba(0, 0, 0, 0.05);
+}
+
+/* Dark mode colors */
+.dark {
+  --bg-primary: #0f1419;
+  --bg-secondary: #1a1f28;
+  --text-primary: #e4e6eb;
+  --text-secondary: #9ca3af;
+  --border-color: #2d3748;
+  --cricket-accent: #10b981;
+  --cricket-accent-light: #064e3b;
+  --football-accent: #3b82f6;
+  --football-accent-light: #1e3a8a;
+  --live-indicator: #ef4444;
+  --card-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Cricket theme */
+.cricket-theme {
+  --sport-primary: var(--cricket-accent);
+  --sport-light: var(--cricket-accent-light);
+  --sport-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+/* Football theme */
+.football-theme {
+  --sport-primary: var(--football-accent);
+  --sport-light: var(--football-accent-light);
+  --sport-gradient: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in forwards;
+}
+
+/* Live indicator */
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--live-indicator);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px var(--card-shadow);
+}
